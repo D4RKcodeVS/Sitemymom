@@ -102,63 +102,53 @@
 			<!-- Footer -->
 				<footer id="footer"><div class="inner">
 					<div class="visitantes">
-						<p>
 							<button id="reset-btn"><img src="./image/people-outline.svg" alt="" height="20"></button>
 							<span id="visit-count">0</span>
-						<!-- ------------SCRIPT DE CONTAGEM -->
 						
+							<!-- ------------SCRIPT DE CONTAGEM -->
 						<script>
-							// Função para obter ou inicializar a contagem de visitantes
-							function getVisitCount() {
-								let count = localStorage.getItem('visitCount');
-								if (!count) {
-									count = 0;
+							function getCookie(name) {
+								const value = `; ${document.cookie}`;
+								const parts = value.split(`; ${name}=`);
+								if (parts.length === 2) return parts.pop().split(';').shift();
+							}
+							
+							function setCookie(name, value, days) {
+								const date = new Date();
+								date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+								const expires = `expires=${date.toUTCString()}`;
+								document.cookie = `${name}=${value}; ${expires}; path=/`;
+							}
+							
+							function getUniqueVisitCount() {
+								const cookieValue = getCookie('uniqueVisits');
+								if (!cookieValue) {
+									return 0;
 								}
-								return parseInt(count);
+								return parseInt(cookieValue);
 							}
 							
-							// Função para incrementar a contagem de visitantes e atualizar a exibição
-							function incrementVisitCount() {
-								let count = getVisitCount();
-								count++;
-								localStorage.setItem('visitCount', count);
-								document.getElementById('visit-count').textContent = count;
+							function setUniqueVisitCount(count) {
+								setCookie('uniqueVisits', count, 365); // Cookie válido por 1 ano
+								document.getElementById('unique-visit-count').textContent = count;
 							}
 							
-							// Chamada para incrementar a contagem quando a página for carregada
+							document.getElementById('reset-btn').addEventListener('click', function() {
+								const senha = prompt('???');
+								if (senha === 'DRK20') {
+									if (confirm('???')) {
+										setUniqueVisitCount(0);
+										alert('???');
+									}
+								} else {
+									alert('Senha incorreta. Ação cancelada.');
+								}
+							});
+							
 							window.onload = function() {
-								incrementVisitCount();
+								incrementUniqueVisitCount();
 							};
-
-
-								function getVisitCount() {
-    								let count = localStorage.getItem('visitCount');
-    									if (!count) {
-        									count = 0;
-    									}
-    										return parseInt(count);
-										}									
-
-										function setVisitCount(count) {
-											localStorage.setItem('visitCount', count);
-											document.getElementById('visit-count').textContent = count;
-										}
-
-										document.getElementById('reset-btn').addEventListener('click', function() {
-											const senha = prompt('???');
-											if (senha === 'D4RKcodeVS2024') {
-												if (confirm('???')) {
-													setVisitCount(0);
-													alert('???');
-												}
-											} else {
-												alert('Senha incorreta. Ação cancelada.');
-											}
-										});
-
-							</script>
-							
-						
+						</script>
 						<!-- ------------SCRIPT DE CONTAGEM -->
 						</p>
 					</div>

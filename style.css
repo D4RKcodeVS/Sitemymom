@@ -1406,6 +1406,8 @@
 	font-size: 0.9em;
 	padding: 2em 0 2em 0;
 	text-align: center;
+
+	
 }
 .copyright a {
 	color:white;
@@ -1421,3 +1423,6 @@
 			}
 
 		}
+.visitantes button{
+	background: transparent;
+}

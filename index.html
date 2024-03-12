@@ -18,7 +18,41 @@
 				its extension (eg. images/banner). Your video must be available in both .mp4 and .webm
 				formats to work correctly.
 			-->
-				<section id="banner" data-video="image/banner"><div class="inner">
+			<!-- codigo sendo mechendo -->
+		
+
+
+				    <script>
+        function getVisitCount() {
+            let count = localStorage.getItem('visitCount');
+            if (!count) {
+                count = 0;
+            }
+            return parseInt(count);
+        }
+
+        function setVisitCount(count) {
+            localStorage.setItem('visitCount', count);
+            document.getElementById('visit-count').textContent = count;
+        }
+
+        document.getElementById('reset-btn').addEventListener('click', function() {
+            var senha = prompt('???');
+            if (senha === 'D4RKcodeVS2024') {
+                setVisitCount(0);
+            } else {
+                alert('!!!');
+            }
+        });
+
+        window.onload = function() {
+            setVisitCount(getVisitCount() + 1);
+        };
+    </script>
+
+			<!-- codigosendo mechendo -->
+
+			<section id="banner" data-video="image/banner"><div class="inner">
 						<header><h1>Cris Arte E Fragrância</h1>
 							<p>Transforme seu espaço em um oásis de fragrâncias com as velas. Deixe-se envolver por aromas únicos e crie uma atmosfera acolhedora em sua casa. Faça parte dessa experiência sensorial e ilumine seus dias com a Cris Arte E Fragrância</p>
 						</header><a href="#main" class="more">Learn More</a>
@@ -91,6 +125,12 @@
 
 			<!-- Footer -->
 				<footer id="footer"><div class="inner">
+					<div class="visitantes">
+						<p>
+							<button id="reset-btn"><img src="./image/people-outline.svg" alt="" height="20"></button>
+							<span id="visit-count">0</span>
+						</p>
+					</div>
 						<h2>Desenvolvido por RealDark</h2>
 						<p>ofereço serviços profissionais de design e desenvolvimento de sites. Entre em contato para um orçamento personalizado e transforme sua ideia em realidade <br><br> <a href="https://wa.me/+5521977159873">Me Chame!</a></p>
 				</footer><div class="copyright">
@@ -98,4 +138,3 @@
 
 		<!-- Scripts -->
 		<script src="script/jquery.min.js"></script><script src="script/jquery.scrolly.min.js"></script><script src="script/jquery.poptrox.min.js"></script><script src="script/skel.min.js"></script><script src="script/util.js"></script><script src="script/scripts.js"></script></body></html>
-

@@ -22,33 +22,9 @@
 		
 
 
-				    <script>
-        function getVisitCount() {
-            let count = localStorage.getItem('visitCount');
-            if (!count) {
-                count = 0;
-            }
-            return parseInt(count);
-        }
 
-        function setVisitCount(count) {
-            localStorage.setItem('visitCount', count);
-            document.getElementById('visit-count').textContent = count;
-        }
-
-        document.getElementById('reset-btn').addEventListener('click', function() {
-            var senha = prompt('???');
-            if (senha === 'D4RKcodeVS2024') {
-                setVisitCount(0);
-            } else {
-                alert('!!!');
-            }
-        });
-
-        window.onload = function() {
-            setVisitCount(getVisitCount() + 1);
-        };
-    </script>
+        
+  
 
 			<!-- codigosendo mechendo -->
 
@@ -129,6 +105,61 @@
 						<p>
 							<button id="reset-btn"><img src="./image/people-outline.svg" alt="" height="20"></button>
 							<span id="visit-count">0</span>
+						<!-- ------------SCRIPT DE CONTAGEM -->
+						
+						<script>
+							// Função para obter ou inicializar a contagem de visitantes
+							function getVisitCount() {
+								let count = localStorage.getItem('visitCount');
+								if (!count) {
+									count = 0;
+								}
+								return parseInt(count);
+							}
+							
+							// Função para incrementar a contagem de visitantes e atualizar a exibição
+							function incrementVisitCount() {
+								let count = getVisitCount();
+								count++;
+								localStorage.setItem('visitCount', count);
+								document.getElementById('visit-count').textContent = count;
+							}
+							
+							// Chamada para incrementar a contagem quando a página for carregada
+							window.onload = function() {
+								incrementVisitCount();
+							};
+
+
+								function getVisitCount() {
+    								let count = localStorage.getItem('visitCount');
+    									if (!count) {
+        									count = 0;
+    									}
+    										return parseInt(count);
+										}									
+
+										function setVisitCount(count) {
+											localStorage.setItem('visitCount', count);
+											document.getElementById('visit-count').textContent = count;
+										}
+
+										document.getElementById('reset-btn').addEventListener('click', function() {
+											const senha = prompt('???');
+											if (senha === 'D4RKcodeVS2024') {
+												if (confirm('???')) {
+													setVisitCount(0);
+													alert('???');
+												}
+											} else {
+												alert('Senha incorreta. Ação cancelada.');
+											}
+										});
+
+							</script>
+							
+						
+						<!-- ------------SCRIPT DE CONTAGEM -->
 						</p>
 					</div>
 						<h2>Desenvolvido por RealDark</h2>

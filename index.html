@@ -101,60 +101,11 @@
 
 			<!-- Footer -->
 				<footer id="footer"><div class="inner">
-					<div class="visitantes">
-							<button id="reset-btn"><img src="./image/people-outline.svg" alt="" height="20"></button>
-							<span id="visit-count">0</span>
-						
-							<!-- ------------SCRIPT DE CONTAGEM -->
-						<script>
-							function getCookie(name) {
-								const value = `; ${document.cookie}`;
-								const parts = value.split(`; ${name}=`);
-								if (parts.length === 2) return parts.pop().split(';').shift();
-							}
-							
-							function setCookie(name, value, days) {
-								const date = new Date();
-								date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-								const expires = `expires=${date.toUTCString()}`;
-								document.cookie = `${name}=${value}; ${expires}; path=/`;
-							}
-							
-							function getUniqueVisitCount() {
-								const cookieValue = getCookie('uniqueVisits');
-								if (!cookieValue) {
-									return 0;
-								}
-								return parseInt(cookieValue);
-							}
-							
-							function setUniqueVisitCount(count) {
-								setCookie('uniqueVisits', count, 365); // Cookie válido por 1 ano
-								document.getElementById('unique-visit-count').textContent = count;
-							}
-							
-							document.getElementById('reset-btn').addEventListener('click', function() {
-								const senha = prompt('???');
-								if (senha === 'DRK20') {
-									if (confirm('???')) {
-										setUniqueVisitCount(0);
-										alert('???');
-									}
-								} else {
-									alert('Senha incorreta. Ação cancelada.');
-								}
-							});
-							
-							window.onload = function() {
-								incrementUniqueVisitCount();
-							};
-						</script>
-						<!-- ------------SCRIPT DE CONTAGEM -->
-						</p>
 					</div>
 						<h2>Desenvolvido por RealDark</h2>
 						<p>ofereço serviços profissionais de design e desenvolvimento de sites. Entre em contato para um orçamento personalizado e transforme sua ideia em realidade <br><br> <a href="https://wa.me/+5521977159873">Me Chame!</a></p>
-				</footer><div class="copyright">
+						<img src="http://contador.kinghost.com.br/contador.cgi?ft=1|df=crisartefragrancia.vercel.app">
+					</footer><div class="copyright">
 			</div>
 
 		<!-- Scripts -->
